@@ -23,7 +23,7 @@
       <div>
         <label for="email">Enter your email Id:</label>
         <input type="email" id="email" required placeholder="Email" />
-        <error for="email">Error</error>
+        <error id="errorEmail" for="email"></error>
       </div>
       <div>
         <label for="url">Enter your URL:</label>
@@ -69,6 +69,16 @@
             nameError.textContent="";
             else
             nameError.textContent="Invalid Name";
+        });
+        /*UC2. Email Validation */
+        const email = document.querySelector("#email");
+        const emailError = document.querySelector("#errorEmail");
+        email.addEventListener('input',function(){
+            let emailRegex = RegExp('(^[a-z]+)(([\. \+ \-]?[a-z A-Z 0-9])*)@(([0-9 a-z]+[\.]+[a-z]{3})+([\.]+[a-z]{2,3})?$)');
+            if(emailRegex.test(email.value))
+            emailError.textContent="";
+            else
+            emailError.textContent="Invalid Email";
         });
         /*Salary range setter*/
       const salary = document.querySelector("#salary");
