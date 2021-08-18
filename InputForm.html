@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width" />
     <title>Sample Form</title>
     <link rel="stylesheet" href="./css/form.css" />
+    <!--using media query in html tag-->
+    <link rel="stylesheet" href="./css/temp.css" media = "(min-width:400px) and (max-width:500px)"/>
   </head>
   <body>
     <header>HTML-Form Elements</header>
@@ -16,7 +18,7 @@
         <error id="errorName" for="name"></error>
       </div>
       <div>
-        <label for="pwd">Enter your password:</label>
+        <label id="pass" for="pwd">Enter your password:</label>
         <input type="password" id="pwd" required placeholder="Password" />
         <error id="errPwd" for="pwd"></error>
       </div>
@@ -101,6 +103,14 @@
             errPwd.textContent="";
             else
             errPwd.textContent="Invalid Password";
+        });
+        /*using media query in js*/
+        const mediaQuery = window.matchMedia("(max-width:320px)");
+        mediaQuery.addListener(function(){
+
+            if(mediaQuery.matches){
+                console.log("Rendered for 320px and lesser");
+        }
         });
         
         /*Salary range setter*/
