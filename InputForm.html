@@ -18,7 +18,7 @@
       <div>
         <label for="pwd">Enter your password:</label>
         <input type="password" id="pwd" required placeholder="Password" />
-        <error for="pwd">Error</error>
+        <error id="errPwd" for="pwd"></error>
       </div>
       <div>
         <label for="email">Enter your email Id:</label>
@@ -86,12 +86,23 @@
         const contact = document.querySelector("#phone");
         const errorContact = document.querySelector("#errorMobile");
         contact.addEventListener('input',function(){
-            let emailRegex = RegExp('^[91]+[\\s]+[0-9]{10}$');
-            if(emailRegex.test(contact.value))
+            let mobileRegex = RegExp('^[91]+[\\s]+[0-9]{10}$');
+            if(mobileRegex.test(contact.value))
             errorContact.textContent="";
             else
             errorContact.textContent="Invalid Mobile Number";
         });
+         /*UC-4 Password Validation*/
+         const password = document.querySelector("#pwd");
+        const errPwd = document.querySelector("#errPwd");
+        password.addEventListener('input',function(){
+            let pwdRegex = RegExp("(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?!.*[<>`])(?=[^.,:;'!@#$%^&*\\-_+=|(){}[?]*[.,:;'!@#$%^&*\\-_+=|(){}[?][^.,:;'!@#$%^&*\\-_+=|(){}[?]*$).{8,}$");
+            if(pwdRegex.test(password.value))
+            errPwd.textContent="";
+            else
+            errPwd.textContent="Invalid Password";
+        });
+        
         /*Salary range setter*/
       const salary = document.querySelector("#salary");
       const output = document.querySelector("#salaryOp");
