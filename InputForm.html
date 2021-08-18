@@ -28,15 +28,17 @@
       <div>
         <label for="url">Enter your URL:</label>
         <input type="url" id="url" required placeholder="Site URL" />
+        <error for="url"></error>
       </div>
       <div>
         <label for="phone">Enter your Phone Number:</label>
         <input type="tel" id="phone" required placeholder="Contact Number" />
-        <error for="phone">Error</error>
+        <error id="errorMobile" for="phone"></error>
       </div>
       <div>
         <label for="search">Enter your search input:</label>
         <input type="search" id="search" required placeholder="Search" />
+        <error for="search"></error>
       </div>
       <div>
         <label for="date">Select your BirthDate:</label>
@@ -79,6 +81,16 @@
             emailError.textContent="";
             else
             emailError.textContent="Invalid Email";
+        });
+        /*UC-3 Mobile Number Validation*/
+        const contact = document.querySelector("#phone");
+        const errorContact = document.querySelector("#errorMobile");
+        contact.addEventListener('input',function(){
+            let emailRegex = RegExp('^[91]+[\\s]+[0-9]{10}$');
+            if(emailRegex.test(contact.value))
+            errorContact.textContent="";
+            else
+            errorContact.textContent="Invalid Mobile Number";
         });
         /*Salary range setter*/
       const salary = document.querySelector("#salary");

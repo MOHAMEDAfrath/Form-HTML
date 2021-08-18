@@ -31,12 +31,13 @@ label{
     text-align: right;
 }
 input{
-    width:65.3%;
+    width : 55%
     
 }
-#name,#salary,#email,#phone,#pwd{
-    width: 55%;
+#date{
+    width: 65%;
 }
+
 error{
     color: red;
     font-style: italic;
