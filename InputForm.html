@@ -86,8 +86,8 @@
         const contact = document.querySelector("#phone");
         const errorContact = document.querySelector("#errorMobile");
         contact.addEventListener('input',function(){
-            let emailRegex = RegExp('^[91]+[\\s]+[0-9]{10}$');
-            if(emailRegex.test(contact.value))
+            let mobileRegex = RegExp('^[91]+[\\s]+[0-9]{10}$');
+            if(mobileRegex.test(contact.value))
             errorContact.textContent="";
             else
             errorContact.textContent="Invalid Mobile Number";
