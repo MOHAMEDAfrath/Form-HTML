@@ -31,7 +31,7 @@ label{
     text-align: right;
 }
 input{
-    width:65%;
+    width:65.3%;
     
 }
 #name,#salary,#email,#phone,#pwd{
@@ -40,5 +40,6 @@ input{
 error{
     color: red;
     font-style: italic;
-
+    width: 5%;
+    display: inline;
 }
